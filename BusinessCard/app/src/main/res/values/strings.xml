@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Business Card</string>
+    <string name="full_name">Xander Lutz</string>
+    <string name="title">Software Developer</string>
+    <string name="email">xander.lutz@gmail.com</string>
+    <string name="social">\@xander_lutz</string>
+    <string name="phone">224–288–8242</string>
+</resources>
