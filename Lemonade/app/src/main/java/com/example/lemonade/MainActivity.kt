@@ -85,8 +85,11 @@ fun LemonApp() {
                         .clip(RoundedCornerShape(12.dp))
                         .background(colorResource(R.color.green))
                         .clickable {
-                            if (taps == random) { taps = 0; screen = 3 }
-                            else { taps += 1 }
+                            if (taps == random) {
+                                taps = 0; screen = 3
+                            } else {
+                                taps += 1
+                            }
                         }
                 )
             }
@@ -131,6 +134,12 @@ fun Screen(
     Column(
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
+        Surface(
+            color = colorResource(R.color.off_yellow),
+            modifier = Modifier
+                .fillMaxWidth()
+                .height(40.dp)
+        ) {}
         Column(
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.Center,
@@ -153,7 +162,9 @@ fun Screen(
             Image(
                 painter = imagePainter,
                 contentDescription = imageDescription,
-                modifier = modifier.height(180.dp).width(180.dp)
+                modifier = modifier
+                    .height(180.dp)
+                    .width(180.dp)
             )
             Spacer(modifier = Modifier.height(32.dp))
             Text(
