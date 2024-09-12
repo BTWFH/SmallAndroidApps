@@ -1,3 +1,24 @@
 <resources>
     <string name="app_name">Art Space</string>
+    <string name="previous">Previous</string>
+    <string name="next">Next</string>
+    <string name="error">error</string>
+    <string name="art_1_info">Adam Riches</string>
+    <string name="art_2_info">Unknown</string>
+    <string name="art_3_info">MuFan</string>
+    <string name="art_4_info">Simon Handle</string>
+    <string name="art_5_info">RF Pangborn</string>
+    <string name="art_6_info">Rhyn</string>
+    <string name="art_7_info">MuFan</string>
+    <string name="art_8_info">Unknown</string>
+    <string name="art_9_info">Valtteri Saha</string>
+    <string name="art_1_title">The Dark, Erie, and Beautiful</string>
+    <string name="art_2_title">Unknown</string>
+    <string name="art_3_title">Smile</string>
+    <string name="art_4_title">Mute</string>
+    <string name="art_5_title">Deathless</string>
+    <string name="art_6_title">Jennifer Hiles</string>
+    <string name="art_7_title">Eye</string>
+    <string name="art_8_title">Unknown</string>
+    <string name="art_9_title">You Scare Me Constantly</string>
 </resources>
