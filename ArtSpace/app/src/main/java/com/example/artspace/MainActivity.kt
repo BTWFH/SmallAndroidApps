@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.annotation.StringRes
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -49,7 +50,7 @@ class MainActivity : ComponentActivity() {
     }
 }
 
-@Preview ( showBackground = true )
+@Preview ( showBackground = true, showSystemUi = true )
 @Composable
 fun Preview() {
     ArtSpaceApp()
@@ -57,32 +58,46 @@ fun Preview() {
 
 @Composable
 fun ArtSpaceApp(modifier: Modifier = Modifier) {
-    var imagePainterId by remember { mutableIntStateOf(R.drawable.art_1) }
-    var imagePainter = painterResource(imagePainterId)
-    var title = when (imagePainterId) {
-        R.drawable.art_1 -> stringResource(id = R.string.art_1_title)
-        R.drawable.art_2 -> stringResource(id = R.string.art_2_title)
-        R.drawable.art_3 -> stringResource(id = R.string.art_3_title)
-        R.drawable.art_4 -> stringResource(id = R.string.art_4_title)
-        R.drawable.art_5 -> stringResource(id = R.string.art_5_title)
-        R.drawable.art_6 -> stringResource(id = R.string.art_6_title)
-        R.drawable.art_7 -> stringResource(id = R.string.art_7_title)
-        R.drawable.art_8 -> stringResource(id = R.string.art_8_title)
-        R.drawable.art_9 -> stringResource(id = R.string.art_9_title)
-        else -> stringResource(R.string.error)
-    }
-    var info = when (imagePainterId) {
-        R.drawable.art_1 -> stringResource(id = R.string.art_1_info)
-        R.drawable.art_2 -> stringResource(id = R.string.art_2_info)
-        R.drawable.art_3 -> stringResource(id = R.string.art_3_info)
-        R.drawable.art_4 -> stringResource(id = R.string.art_4_info)
-        R.drawable.art_5 -> stringResource(id = R.string.art_5_info)
-        R.drawable.art_6 -> stringResource(id = R.string.art_6_info)
-        R.drawable.art_7 -> stringResource(id = R.string.art_7_info)
-        R.drawable.art_8 -> stringResource(id = R.string.art_8_info)
-        R.drawable.art_9 -> stringResource(id = R.string.art_9_info)
-        else -> stringResource(R.string.error)
-    }
+    var state by remember { mutableIntStateOf(0) }
+
+    val images = arrayOf(
+        R.drawable.art_1,
+        R.drawable.art_2,
+        R.drawable.art_3,
+        R.drawable.art_4,
+        R.drawable.art_5,
+        R.drawable.art_6,
+        R.drawable.art_7,
+        R.drawable.art_8,
+        R.drawable.art_9
+    )
+    val titles = arrayOf(
+        R.string.art_1_title,
+        R.string.art_2_title,
+        R.string.art_3_title,
+        R.string.art_4_title,
+        R.string.art_5_title,
+        R.string.art_6_title,
+        R.string.art_7_title,
+        R.string.art_8_title,
+        R.string.art_9_title
+    )
+    val infos = arrayOf(
+        R.string.art_1_info,
+        R.string.art_2_info,
+        R.string.art_3_info,
+        R.string.art_4_info,
+        R.string.art_5_info,
+        R.string.art_6_info,
+        R.string.art_7_info,
+        R.string.art_8_info,
+        R.string.art_9_info
+    )
+
+    val image = images[state]
+    val title = titles[state]
+    val info = infos[state]
+
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center,
@@ -91,75 +106,89 @@ fun ArtSpaceApp(modifier: Modifier = Modifier) {
             .verticalScroll(rememberScrollState())
     ) {
         Image(
-            painter = imagePainter,
+            painter = painterResource(image),
             contentDescription = null,
             contentScale = ContentScale.FillBounds,
             modifier = Modifier
                 .width(320.dp)
                 .height(380.dp)
-                .padding(16.dp)
-                .shadow(8.dp, )
+                .shadow(8.dp)
+        )
+        Spacer(modifier = Modifier.height(64.dp))
+        Label(
+            370,
+            title,
+            info
         )
         Spacer(modifier = Modifier.height(16.dp))
-        Column(
-            horizontalAlignment = Alignment.CenterHorizontally,
-            modifier = Modifier
-                .background(colorResource(id = R.color.background))
-                .padding(16.dp)
-                .width(320.dp)
-        ) {
-            Text(
-                text = title,
-                fontSize = 24.sp,
-                fontWeight = FontWeight.Bold,
-            )
-            Text(
-                text = info
-            )
-        }
-        Spacer(modifier = Modifier.height(16.dp))
-        Row (
-            horizontalArrangement = Arrangement.SpaceBetween
-            ,modifier = Modifier.width(280.dp)
-        ) {
-            Button(
-                content = {Text( text = stringResource(R.string.previous))},
-                onClick = {
-                    imagePainterId = when (imagePainterId) {
-                        R.drawable.art_9 -> R.drawable.art_8
-                        R.drawable.art_8 -> R.drawable.art_7
-                        R.drawable.art_7 -> R.drawable.art_6
-                        R.drawable.art_6 -> R.drawable.art_5
-                        R.drawable.art_5 -> R.drawable.art_4
-                        R.drawable.art_4 -> R.drawable.art_3
-                        R.drawable.art_3 -> R.drawable.art_2
-                        R.drawable.art_2 -> R.drawable.art_1
-                        R.drawable.art_1 -> R.drawable.art_9
-                        else -> 0
-                    }
-                },
-                colors = ButtonDefaults. buttonColors(containerColor = colorResource(id = R.color.black)),
-                modifier = Modifier.width(120.dp)
-            )
-            Button(
-                content = { Text( text = stringResource(R.string.next)) },
-                onClick = {
-                    imagePainterId = when (imagePainterId) {
-                        R.drawable.art_1 -> R.drawable.art_2
-                        R.drawable.art_2 -> R.drawable.art_3
-                        R.drawable.art_3 -> R.drawable.art_4
-                        R.drawable.art_4 -> R.drawable.art_5
-                        R.drawable.art_5 -> R.drawable.art_6
-                        R.drawable.art_6 -> R.drawable.art_7
-                        R.drawable.art_7 -> R.drawable.art_8
-                        R.drawable.art_8 -> R.drawable.art_9
-                        R.drawable.art_9 -> R.drawable.art_1
-                        else -> 0
-                    }
-                },
-                colors = ButtonDefaults.buttonColors(containerColor = colorResource(id = R.color.black)),
-                modifier = Modifier.width(120.dp)
-            )
-        }
+        Buttons(
+            320,
+            {
+                if (state < 8) {
+                    state += 1
+                }
+                else {
+                    state = 0
+                }
+            },
+            {
+                if (state > 0) {
+                    state -= 1
+                }
+                else {
+                    state = 8
+                }
+            }
+        )
+    }
+}
+
+@Composable
+fun Label(
+    width: Int,
+    @StringRes title: Int,
+    @StringRes info: Int
+) {
+    Column(
+        horizontalAlignment = Alignment.CenterHorizontally,
+        modifier = Modifier
+            .width(width.dp)
+            .background(colorResource(id = R.color.background))
+            .padding(16.dp)
+    ) {
+        Text(
+            fontSize = 24.sp,
+            text = stringResource(title),
+            fontWeight = FontWeight.Bold,
+        )
+        Text(
+            text = stringResource(info)
+        )
+    }
+}
+
+@Composable
+fun Buttons(
+    width: Int,
+    next: () -> Unit,
+    previous: () -> Unit,
+    modifier: Modifier = Modifier
+) {
+    Row (
+        horizontalArrangement = Arrangement.SpaceBetween,
+        modifier = modifier.width(width.dp)
+    ) {
+        Button(
+            content = {Text( text = stringResource(R.string.previous))},
+            onClick = next,
+            colors = ButtonDefaults. buttonColors(containerColor = colorResource(id = R.color.black)),
+            modifier = modifier.width(120.dp)
+        )
+        Button(
+            content = { Text( text = stringResource(R.string.next)) },
+            onClick = previous,
+            colors = ButtonDefaults.buttonColors(containerColor = colorResource(id = R.color.black)),
+            modifier = modifier.width(120.dp)
+        )
     }
 }
