@@ -25,6 +25,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.affirmations.ui.theme.AffirmationsTheme
+import com.example.affirmations.model.Affirmation
 
 class MainActivity : ComponentActivity() {
 
@@ -46,6 +47,11 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun AffirmationsApp() {
+}
+
+@Composable
+fun AffirmationCard(affirmation: Affirmation, modifier: Modifier = Modifier) {
+
 }
 
 @Preview
