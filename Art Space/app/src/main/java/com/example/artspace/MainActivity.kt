@@ -147,11 +147,12 @@ fun ArtSpaceApp(modifier: Modifier = Modifier) {
 fun Label(
     width: Int,
     @StringRes title: Int,
-    @StringRes info: Int
+    @StringRes info: Int,
+    modifier: Modifier = Modifier
 ) {
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
-        modifier = Modifier
+        modifier = modifier
             .width(width.dp)
             .background(colorResource(id = R.color.background))
             .padding(16.dp)
@@ -160,9 +161,11 @@ fun Label(
             fontSize = 24.sp,
             text = stringResource(title),
             fontWeight = FontWeight.Bold,
+            modifier = modifier
         )
         Text(
-            text = stringResource(info)
+            text = stringResource(info),
+            modifier = modifier
         )
     }
 }
