@@ -14,7 +14,7 @@
   ~ limitations under the License.
   -->
 <resources>
-    <string name="app_name"></string>
+    <string name="app_name">Micro Affirmations</string>
     <string name="affirmation1">You are strong, you know, in your own sort of way.</string>
     <string name="affirmation2">You believe in yourself, and that\'s what counts.</string>
     <string name="affirmation3">Each day is an opportunity to kind of do better.</string>
