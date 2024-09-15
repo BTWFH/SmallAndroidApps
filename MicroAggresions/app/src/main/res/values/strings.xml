@@ -14,7 +14,7 @@
   ~ limitations under the License.
   -->
 <resources>
-    <string name="app_name">Affirmations</string>
+    <string name="app_name"></string>
     <string name="affirmation1">You are strong, you know, in your own sort of way.</string>
     <string name="affirmation2">You believe in yourself, and that\'s what counts.</string>
     <string name="affirmation3">Each day is an opportunity to kind of do better.</string>
@@ -23,6 +23,6 @@
     <string name="affirmation6">There are probably good things coming your way.</string>
     <string name="affirmation7">There are opportunities everywhere, even though you don\'t see them.</string>
     <string name="affirmation8">You follow your heart, just like everyone else.</string>
-    <string name="affirmation9">Things will unfold at precisely the right time probably.</string>
+    <string name="affirmation9">Things will unfold at precisely the right time, probably.</string>
     <string name="affirmation10">You will be present in all the moments today, it\'s not like you have much else going on.</string>
 </resources>
