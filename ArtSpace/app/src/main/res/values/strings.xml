@@ -3,22 +3,26 @@
     <string name="previous">Previous</string>
     <string name="next">Next</string>
     <string name="error">error</string>
-    <string name="art_1_info">Adam Riches</string>
-    <string name="art_2_info">Unknown</string>
-    <string name="art_3_info">MuFan</string>
-    <string name="art_4_info">Simon Handle</string>
-    <string name="art_5_info">RF Pangborn</string>
-    <string name="art_6_info">Rhyn</string>
-    <string name="art_7_info">MuFan</string>
-    <string name="art_8_info">Unknown</string>
-    <string name="art_9_info">Valtteri Saha</string>
-    <string name="art_1_title">The Dark, Erie, and Beautiful</string>
-    <string name="art_2_title">Unknown</string>
-    <string name="art_3_title">Smile</string>
-    <string name="art_4_title">Mute</string>
-    <string name="art_5_title">Deathless</string>
-    <string name="art_6_title">Flesh Eater</string>
-    <string name="art_7_title">Eye</string>
-    <string name="art_8_title">Unknown</string>
-    <string name="art_9_title">You Scare Me Constantly</string>
+    <string-array name="infos">
+        <item>Adam Riches</item>
+        <item>Unknown</item>
+        <item>MuFan</item>
+        <item>Simon Handle</item>
+        <item>RF Pangborn</item>
+        <item>Rhyn</item>
+        <item>MuFan</item>
+        <item>Unknown</item>
+        <item>Valtteri Saha</item>
+    </string-array>
+    <string-array name="titles">
+        <item>The Dark, Erie, and Beautiful</item>
+        <item>Unknown</item>
+        <item>Smile</item>
+        <item>Mute</item>
+        <item>Deathless</item>
+        <item>Flesh Eater</item>
+        <item>Eye</item>
+        <item>Unknown</item>
+        <item>You Scare Me Constantly</item>
+    </string-array>
 </resources>
