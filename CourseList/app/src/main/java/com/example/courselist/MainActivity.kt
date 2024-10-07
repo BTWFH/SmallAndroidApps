@@ -65,11 +65,13 @@ fun TopicCard(
                 contentDescription = null,
                 modifier = Modifier.size(68.dp)
             )
-            Column {
+            Column (
+                modifier = Modifier.padding(top = 16.dp, end = 16.dp)
+            ) {
                 Text(
                     text = stringResource(topic.name),
                     style = MaterialTheme.typography.bodyMedium,
-                    modifier = Modifier.padding(start = 16.dp, top = 16.dp, end = 16.dp, bottom = 8.dp)
+                    modifier = Modifier.padding(start = 16.dp, bottom = 8.dp)
                 )
                 Row (
                     verticalAlignment = Alignment.CenterVertically,
